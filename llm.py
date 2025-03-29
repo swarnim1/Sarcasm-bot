@@ -1,8 +1,11 @@
+import os
+from dotenv import load_dotenv
 import google.generativeai as genai
 from tone_prompts import TONE_PRESETS
+load_dotenv()
 
 # Gemini API key
-genai.configure(api_key="AIzaSyBpjBcQofCTyVBUiuyKZxpt7TVIavLfdtk")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
