@@ -65,7 +65,7 @@ for speaker, message in st.session_state.chat_history:
         st.markdown(message)
 
 # Chat input
-user_input = st.chat_input("Type Greatest thoughts...")
+user_input = st.chat_input("Don’t worry, I’ll pretend it’s a smart question.")
 
 if user_input:
     # Add and show user message
@@ -75,7 +75,7 @@ if user_input:
 
     # Bot response
     with st.chat_message("assistant"):
-        with st.spinner("Typing..."):
+        with st.spinner("Typing something unnecessarily clever..."):
             reply = generate_sarcastic_reply(
                 st.session_state.chat_history, user_input, tone
             )
